@@ -1,0 +1,82 @@
+<div class="detail-panel" [class.open]="isOpen && tool">
+  <div class="detail-header" *ngIf="tool">
+    <div>
+      <div class="detail-title">{{ tool.name }}</div>
+      <div style="font-size: 13px; color: #718096; margin-top: 5px;">{{ tool.description }}</div>
+    </div>
+    <button class="close-btn" (click)="onClose()">×</button>
+  </div>
+  <div class="detail-content" *ngIf="tool">
+    <div class="detail-section">
+      <div class="section-title">Description</div>
+      <p style="font-size: 14px; color: #4a5568; line-height: 1.6;">
+        {{ tool.description }}
+      </p>
+    </div>
+
+    <div class="detail-section">
+      <div class="section-title">Categories & Keywords</div>
+      <div class="tool-categories" style="margin-bottom: 12px;">
+        <span class="category-tag" *ngFor="let category of tool.categories">
+          {{ category }}
+        </span>
+      </div>
+      <div class="keywords-list">
+        <span class="keyword-tag" *ngFor="let keyword of tool.keywords">
+          {{ keyword }}
+        </span>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="section-title">Usage Statistics</div>
+      <div class="usage-metrics">
+        <div class="metric-box">
+          <div class="metric-value">{{ tool.stats.totalCalls }}</div>
+          <div class="metric-label">Total Calls</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">{{ tool.stats.successRate }}%</div>
+          <div class="metric-label">Success Rate</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">{{ tool.stats.averageTime }}</div>
+          <div class="metric-label">Avg Time</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">{{ tool.stats.lastUsed }}</div>
+          <div class="metric-label">Last Used</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="section-title">Input Schema</div>
+      <div class="schema-box">{{ getSchemaString() }}</div>
+    </div>
+
+    <div class="detail-section">
+      <div class="section-title">Examples</div>
+      <div class="example-item" *ngFor="let example of tool.examples">
+        {{ example }}
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <div class="section-title">Test Tool Execution</div>
+      <div class="test-section">
+        <div class="section-title" style="color: #2c5282; margin-bottom: 12px;">Execute Tool</div>
+        <textarea
+          class="test-input"
+          rows="6"
+          [(ngModel)]="testParameters"
+          placeholder='Enter parameters as JSON:
+{
+  "dataset": [100, 150, 200, 175],
+  "analysisType": "basic"
+}'></textarea>
+        <button class="execute-btn" (click)="onExecute()">▶ Execute Tool</button>
+      </div>
+    </div>
+  </div>
+</div>

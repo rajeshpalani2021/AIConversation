@@ -1,0 +1,12 @@
+<div class="tools-grid">
+  <app-tool-card
+    *ngFor="let tool of tools; trackBy: trackByToolId"
+    [tool]="tool"
+    (testTool)="onTestTool($event)"
+    (viewDetails)="onViewDetails($event)">
+  </app-tool-card>
+</div>
+
+<div *ngIf="tools.length === 0" class="no-tools">
+  <p>No tools found. Waiting for data...</p>
+</div>

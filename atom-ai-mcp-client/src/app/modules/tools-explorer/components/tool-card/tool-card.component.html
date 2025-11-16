@@ -1,0 +1,34 @@
+<div class="tool-card">
+  <div class="tool-header">
+    <div class="tool-icon">{{ tool.icon }}</div>
+    <div style="flex: 1;">
+      <div class="tool-name">{{ tool.name }}</div>
+    </div>
+  </div>
+  <div class="tool-description">
+    {{ tool.description }}
+  </div>
+  <div class="tool-categories">
+    <span class="category-tag" *ngFor="let category of tool.categories">
+      {{ category }}
+    </span>
+  </div>
+  <div class="tool-stats">
+    <div class="tool-stat">
+      <div class="stat-icon-small"></div>
+      <span><span class="stat-number">{{ tool.stats.totalCalls }}</span> calls</span>
+    </div>
+    <div class="tool-stat">
+      <div class="stat-icon-small"></div>
+      <span class="success-rate">{{ tool.stats.successRate }}%</span>
+    </div>
+    <div class="tool-stat">
+      <div class="stat-icon-small"></div>
+      <span><span class="stat-number">{{ tool.stats.averageTime }}</span> avg</span>
+    </div>
+  </div>
+  <div class="tool-actions">
+    <button class="tool-btn primary" (click)="onTestClick()">🧪 Test Tool</button>
+    <button class="tool-btn secondary" (click)="onDetailsClick()">📋 Details</button>
+  </div>
+</div>

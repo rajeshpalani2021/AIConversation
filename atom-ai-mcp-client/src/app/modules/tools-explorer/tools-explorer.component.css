@@ -1,0 +1,51 @@
+.main-content {
+  flex: 1;
+  margin-left: 240px;
+  margin-top: 60px;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-title {
+  font-size: 28px;
+  color: #1e3a5f;
+  font-weight: 600;
+}
+
+.discover-btn {
+  background: linear-gradient(135deg, #9f7aea 0%, #805ad5 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(159, 122, 234, 0.3);
+}
+
+.discover-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(159, 122, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}

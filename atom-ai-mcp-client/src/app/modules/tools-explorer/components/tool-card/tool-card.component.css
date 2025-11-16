@@ -1,0 +1,152 @@
+.tool-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+  transition: all 0.3s;
+  border-left: 4px solid #4299e1;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(30, 58, 95, 0.15);
+}
+
+.tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.tool-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tool-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin-bottom: 8px;
+  flex: 1;
+  margin-left: 12px;
+}
+
+.tool-description {
+  font-size: 14px;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.tool-categories {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.category-tag {
+  padding: 4px 10px;
+  background: #ebf8ff;
+  color: #2c5282;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.tool-stats {
+  display: flex;
+  gap: 15px;
+  padding: 12px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.tool-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #718096;
+}
+
+.stat-icon-small {
+  width: 12px;
+  height: 12px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.stat-number {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.success-rate {
+  color: #48bb78;
+  font-weight: 600;
+}
+
+.tool-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.tool-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.tool-btn.primary {
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  color: white;
+}
+
+.tool-btn.primary:hover {
+  box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+  transform: translateY(-1px);
+}
+
+.tool-btn.secondary {
+  background: white;
+  border: 1px solid #cbd5e0;
+  color: #4a5568;
+}
+
+.tool-btn.secondary:hover {
+  background: #f7fafc;
+  border-color: #4299e1;
+}

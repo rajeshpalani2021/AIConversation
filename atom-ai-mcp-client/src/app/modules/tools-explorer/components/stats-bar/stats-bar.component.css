@@ -1,0 +1,29 @@
+.stats-bar {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.stat-box {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4299e1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #718096;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

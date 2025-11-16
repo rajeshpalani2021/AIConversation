@@ -1,0 +1,50 @@
+.filters-section {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+}
+
+.search-box {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #4299e1;
+}
+
+.category-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category-chip {
+  padding: 8px 16px;
+  background: #e2e8f0;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.category-chip:hover {
+  background: #cbd5e0;
+}
+
+.category-chip.active {
+  background: #ebf8ff;
+  border-color: #4299e1;
+  color: #2c5282;
+  font-weight: 500;
+}

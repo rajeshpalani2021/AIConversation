@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <nav class="nav-menu">
+    <div
+      *ngFor="let item of navItems"
+      class="nav-item"
+      [class.active]="item.active"
+      [routerLink]="item.route"
+      (click)="onNavItemClick(item)">
+      <div class="nav-icon">{{ item.icon }}</div>
+      <span>{{ item.label }}</span>
+    </div>
+  </nav>
+</div>

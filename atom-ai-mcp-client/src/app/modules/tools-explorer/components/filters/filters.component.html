@@ -1,0 +1,18 @@
+<div class="filters-section">
+  <input
+    type="text"
+    class="search-box"
+    placeholder="🔍 Search tools by name, keyword, or description..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearchChange(searchTerm)"
+  />
+  <div class="category-filters">
+    <span
+      *ngFor="let category of categories"
+      class="category-chip"
+      [class.active]="category.active"
+      (click)="onCategoryClick(category)">
+      {{ category.name }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="main-content">
+  <div class="page-header">
+    <h1 class="page-title">Tools Explorer</h1>
+    <button class="discover-btn" (click)="onDiscoverTools()">🔍 Discover Tools</button>
+  </div>
+
+  <!-- Stats Bar -->
+  <app-stats-bar [stats]="systemStats"></app-stats-bar>
+
+  <!-- Filters Section -->
+  <app-filters
+    (searchChange)="onSearchChange($event)"
+    (categoryChange)="onCategoryChange($event)">
+  </app-filters>
+
+  <!-- Tools Grid -->
+  <app-tools-grid
+    [tools]="filteredTools"
+    (testTool)="onTestTool($event)"
+    (viewDetails)="onViewDetails($event)">
+  </app-tools-grid>
+
+  <!-- Detail Panel -->
+  <app-detail-panel
+    [tool]="selectedTool"
+    [isOpen]="isDetailPanelOpen"
+    (close)="onCloseDetailPanel()"
+    (executeTool)="onExecuteTool($event)">
+  </app-detail-panel>
+</div>

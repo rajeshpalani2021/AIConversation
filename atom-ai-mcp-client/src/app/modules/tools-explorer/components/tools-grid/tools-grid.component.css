@@ -1,0 +1,18 @@
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.no-tools {
+  text-align: center;
+  padding: 40px;
+  color: #718096;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}

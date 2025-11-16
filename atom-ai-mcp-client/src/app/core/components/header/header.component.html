@@ -1,0 +1,12 @@
+<div class="header">
+  <div class="header-left">
+    <div class="logo">⚛ ATOM AI MCP Client</div>
+  </div>
+  <div class="header-right">
+    <div class="status-indicator">
+      <div class="status-dot" [class.online]="isSystemOnline"></div>
+      <span>{{ isSystemOnline ? 'System Online' : 'System Offline' }}</span>
+    </div>
+    <div class="user-info">{{ userName }}</div>
+  </div>
+</div>
