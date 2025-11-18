@@ -1,0 +1,117 @@
+<div class="stream-demo">
+  <div class="demo-header">
+    <h2>HTTP POST Stream API Demo</h2>
+    <p>This component demonstrates how to read streaming responses from an HTTP POST endpoint.</p>
+  </div>
+
+  <!-- Configuration Section -->
+  <div class="config-section">
+    <div class="form-group">
+      <label for="apiUrl">API Endpoint URL:</label>
+      <input
+        type="text"
+        id="apiUrl"
+        [(ngModel)]="apiUrl"
+        placeholder="http://localhost:3000/api/stream"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="requestBody">Request Body (JSON):</label>
+      <textarea
+        id="requestBody"
+        [(ngModel)]="requestBody"
+        rows="6"
+        placeholder='{"message": "Hello"}'
+      ></textarea>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="actions">
+    <button
+      class="btn btn-primary"
+      (click)="startStream()"
+      [disabled]="isLoading">
+      {{ isLoading ? 'Streaming...' : 'Start Stream' }}
+    </button>
+    <button
+      class="btn btn-secondary"
+      (click)="runMockDemo()"
+      [disabled]="isLoading">
+      Run Mock Demo
+    </button>
+    <button
+      class="btn btn-danger"
+      (click)="cancelStream()"
+      [disabled]="!isLoading">
+      Cancel
+    </button>
+    <button
+      class="btn btn-outline"
+      (click)="clearResponses()">
+      Clear
+    </button>
+  </div>
+
+  <!-- Error Display -->
+  <div class="error-box" *ngIf="error">
+    <strong>Error:</strong> {{ error }}
+  </div>
+
+  <!-- Loading Indicator -->
+  <div class="loading-indicator" *ngIf="isLoading">
+    <div class="spinner"></div>
+    <span>Receiving stream...</span>
+  </div>
+
+  <!-- Response Section -->
+  <div class="response-section">
+    <h3>Streaming Response:</h3>
+
+    <!-- Full Response -->
+    <div class="full-response">
+      <label>Complete Response:</label>
+      <div class="response-box">
+        {{ fullResponse }}<span class="cursor" *ngIf="isLoading">|</span>
+      </div>
+    </div>
+
+    <!-- Individual Chunks -->
+    <div class="chunks-list">
+      <label>Individual Chunks ({{ responses.length }}):</label>
+      <div class="chunks-container">
+        <div class="chunk-item" *ngFor="let chunk of responses; let i = index">
+          <span class="chunk-index">{{ i + 1 }}</span>
+          <span class="chunk-content">{{ chunk }}</span>
+        </div>
+        <div class="no-chunks" *ngIf="responses.length === 0">
+          No chunks received yet. Click "Start Stream" or "Run Mock Demo" to begin.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage Instructions -->
+  <div class="usage-section">
+    <h3>How to Use in Your Code:</h3>
+    <pre class="code-block">
+<code>// 1. Inject the StreamingService
+constructor(private streamingService: StreamingService) {{'{'}}{{'}'}}</code>
+
+<code>// 2. Call streamPost with your API endpoint and request body
+this.streamingService.streamPost&lt;YourType&gt;(
+  'http://your-api/stream',
+  {{'{'}} message: 'Hello', stream: true {{'}'}}
+).subscribe({{'{'}}</code>
+<code>  next: (data) => {{'{'}}
+    // Handle each chunk as it arrives
+    console.log('Received:', data);
+    this.response += data.content;
+  {{'}'}},</code>
+<code>  error: (err) => console.error('Error:', err),
+  complete: () => console.log('Stream complete')
+{{'}'}});</code>
+    </pre>
+  </div>
+</div>

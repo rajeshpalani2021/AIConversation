@@ -27,6 +27,10 @@ export const routes: Routes = [
     loadComponent: () => import('./modules/tools-explorer/tools-explorer.component').then(m => m.ToolsExplorerComponent) // Placeholder
   },
   {
+    path: 'stream-demo',
+    loadComponent: () => import('./modules/stream-demo/stream-demo.component').then(m => m.StreamDemoComponent)
+  },
+  {
     path: 'settings',
     loadComponent: () => import('./modules/tools-explorer/tools-explorer.component').then(m => m.ToolsExplorerComponent) // Placeholder
   }
